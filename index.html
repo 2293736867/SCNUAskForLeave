@@ -306,7 +306,7 @@
 
     let number = parseInt(Math.random() * 3000 + 8000)
     let time = getTime(3, 4)
-    const reasons = ['找同学办事', '剪头发', '外出采购', '去阳光', '看电影', '别人请吃饭', '请吃饭', '聚餐', '学生会团建']
+    const reasons = ['找同学办事', '剪头发', '外出采购', '去阳光', '看电影', '别人请吃饭', '请吃饭', '聚餐', '学生会团建','去狮山广场','有急事回家']
 
     add(number, time.start, time.end, reasons[parseInt(Math.random() * reasons.length)])
     number += parseInt(Math.random() * 3000 + 3000)
@@ -327,8 +327,8 @@
     let end = new Date(now)
     end.setHours(now.getHours() + 5)
     end.setMinutes(Math.random() > 0.5 ? 0 : 30)
-    add(number, 2021 + "/" + (start.getMonth() + 1) + "/" + start.getDay() + " " + start.getHours() + ":" + start.getMinutes() + ":00",
-        2021 + "/" + (end.getMonth() + 1) + "/" + end.getDay() + " " + end.getHours() + ":" + end.getMinutes() + ":00", reasons[parseInt(Math.random() * reasons.length)])
+    add(number, 2021 + "/" + (start.getMonth() + 1) + "/" + start.getDate() + " " + start.getHours() + ":" + start.getMinutes() + ":00",
+        2021 + "/" + (end.getMonth() + 1) + "/" + end.getDate() + " " + end.getHours() + ":" + end.getMinutes() + ":00", reasons[parseInt(Math.random() * reasons.length)])
 
     function getTime(month1, month2) {
         let months = [month1, month2]

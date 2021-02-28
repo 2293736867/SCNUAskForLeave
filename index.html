@@ -1,414 +1,405 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta content="width=device-width, initial-scale=1.0">
-    <title>
-        Fx 高校学生综合服务平台 学生工作管理系统 学生请假
-    </title>
-    <meta http-equiv="keywords" content="学生工作,综合服务,服务平台,信息系统,管理系统,swis">
-    <meta http-equiv="author" content="华南师范大学,唐小煜,beaming@qq.com">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="css/global.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/right.css" rel="stylesheet">
-    <link href="css/form.css" rel="stylesheet">
-    <link href="css/table.css" rel="stylesheet">
-</head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta content="width=device-width, initial-scale=1.0">
+        <title>
+            Fx 高校学生综合服务平台 学生工作管理系统 学生请假
+        </title>
+        <meta http-equiv="keywords" content="学生工作,综合服务,服务平台,信息系统,管理系统,swis">
+        <meta http-equiv="author" content="华南师范大学,唐小煜,beaming@qq.com">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/right.css" rel="stylesheet">
+        <link href="css/form.css" rel="stylesheet">
+        <link href="css/table.css" rel="stylesheet">
+    </head>
 
-<body>
-<div class="aspNetHidden">
-    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
-           value="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">
-</div>
-<script type="text/javascript">
-    var theForm = document.forms['form1'];
-    if (!theForm) {
-        theForm = document.form1;
-    }
-
-    function __doPostBack(eventTarget, eventArgument) {
-        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-            theForm.__EVENTTARGET.value = eventTarget;
-            theForm.__EVENTARGUMENT.value = eventArgument;
-            theForm.submit();
-        }
-    }
-</script>
-
-<div class="container">
-    <div class="h_menu">
-        <nav>
-            <ul class="menu list-unstyled">
-                <li><a href="https://ssp.scnu.edu.cn/Default.aspx">首页</a>
-                    <ul>
-                        <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?fid=0000">系统公告</a></li>
-                        <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?fid=0099">帮助指南</a></li>
-                        <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?pid=42">联系方式</a></li>
-                        <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?pid=41">系统简介</a></li>
-                        <li><a href="https://ssp.scnu.edu.cn/ShowStatistics.aspx">数据统计</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">个人信息</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的应用</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_xxhz.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">信息汇总</a>
-                        </li>
-                        <li class="bg2"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_zzgx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的证照</a>
-                        </li>
-                        <li class="bg3"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_jbxx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">基本信息</a>
-                        </li>
-                        <li class="bg4"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_jtxx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">家庭信息</a>
-                        </li>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_zhwh.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">账号维护</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_xx_mylogs.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的日志</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖学助学</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_jz_jzsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖助申请</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_jz_jzgs.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖助公示</a>
-                        </li>
-                        <li class="bg2"><a
-                                href="https://ssp.scnu.edu.cn/opt_jz_cxjsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">成果登记与评奖</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">疫情防控</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_yq_lxlxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">离校留校登记</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_yq_jkdk.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">健康打卡</a>
-                        </li>
-                        <li class="bg2"><a
-                                href="https://ssp.scnu.edu.cn/opt_yq_jkdkcx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">近日打卡查询</a>
-                        </li>
-                        <li class="bg3"><a
-                                href="https://ssp.scnu.edu.cn/opt_yq_fxsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">返校申请</a>
-                        </li>
-                        <li class="bg4 selected sel act"><a
-                                href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">学生请假</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">就业服务</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_jy_daqx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">档案去向</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_lx_wylx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">我要离校</a>
-                        </li>
-                        <li class="bg2"><a
-                                href="https://ssp.scnu.edu.cn/opt_jy_gopay.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">离宿缴费</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">智慧团建</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_tw_kjxmsb.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">科技项目申报</a>
-                        </li>
-                        <li class="bg1"><a
-                                href="https://ssp.scnu.edu.cn/opt_tw_stdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">社团申报</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=14">日常管理</a>
-                    <ul>
-                        <li class="bg0"><a
-                                href="https://ssp.scnu.edu.cn/opt_qt_lxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=14">留校登记</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=130">查询统计</a>
-                    <ul>
-
-                    </ul>
-                </li>
-                <li><a href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55#">更多服务</a>
-                    <ul>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=5">系统管理</a>
-                        </li>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=128">宿舍服务</a>
-                        </li>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=106">医保服务</a>
-                        </li>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=107">勤工俭学</a>
-                        </li>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=34">交互平台</a>
-                        </li>
-                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=133">学生发展工作室</a>
-                        </li>
-                        <li>
-                            <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=179">办事大厅管理</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="login_info">
-                    <a href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55#">
-                        <img src="images/user_icon.png">
-                        <span id="logmsg">学生</span></a>
-
-
-                    <a onclick="return confirm(&#39;确定要注销您的登录状态吗？&#39;);" id="gologout" class="submit bg2"
-                       href="javascript:__doPostBack(&#39;ctl00$gologout&#39;,&#39;&#39;)">退出登录</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div id="mp_main" class="mp_main">
-
-
-    </div>
-
-    <div id="mp_slave" class="mp_slave">
-
-        <div class="mainleft">
-            <div class="grid_sys bdorange">
-                <img src="images/logo.png" alt="" class="logo logined_logo">
-                <h1 class="scnu_service logined_service"><img src="images/service.png"
-                                                              alt="学生综合服务平台" class="service"></h1>
-            </div>
-
-
-            <div class="clearfix"></div>
+    <body>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                   value="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">
         </div>
+        <script type="text/javascript">
+            var theForm = document.forms['form1'];
+            if (!theForm) {
+                theForm = document.form1;
+            }
 
-        <div class="main_content grid3of4">
-            <div class="leftgrid bdblue">
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+        </script>
 
-                <div class="clearfix"></div>
+        <div class="container">
+            <div class="h_menu">
+                <nav>
+                    <ul class="menu list-unstyled">
+                        <li><a href="https://ssp.scnu.edu.cn/Default.aspx">首页</a>
+                            <ul>
+                                <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?fid=0000">系统公告</a></li>
+                                <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?fid=0099">帮助指南</a></li>
+                                <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?pid=42">联系方式</a></li>
+                                <li><a href="https://ssp.scnu.edu.cn/showcontent.aspx?pid=41">系统简介</a></li>
+                                <li><a href="https://ssp.scnu.edu.cn/ShowStatistics.aspx">数据统计</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">个人信息</a>
+                            <ul>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的应用</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_xxhz.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">信息汇总</a>
+                                </li>
+                                <li class="bg2"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_zzgx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的证照</a>
+                                </li>
+                                <li class="bg3"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_jbxx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">基本信息</a>
+                                </li>
+                                <li class="bg4"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_jtxx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">家庭信息</a>
+                                </li>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_zhwh.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">账号维护</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_mylogs.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=7">我的日志</a>
+                                </li>
 
-                <ul id="left_menu" class="left_menu">
-                    <li class="0"><a
-                            href="https://ssp.scnu.edu.cn/opt_yq_lxlxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">离校留校登记</a>
-                    </li>
-                    <li class="1"><a
-                            href="https://ssp.scnu.edu.cn/opt_yq_jkdk.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">健康打卡</a>
-                    </li>
-                    <li class="2"><a
-                            href="https://ssp.scnu.edu.cn/opt_yq_jkdkcx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">近日打卡查询</a>
-                    </li>
-                    <li class="3"><a
-                            href="https://ssp.scnu.edu.cn/opt_yq_fxsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">返校申请</a>
-                    </li>
-                    <li class="4 selected sel act"><a
-                            href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">学生请假</a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
+                            </ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖学助学</a>
+                            <ul>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_jz_jzsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖助申请</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_jz_jzgs.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">奖助公示</a>
+                                </li>
+                                <li class="bg2"><a
+                                    href="https://ssp.scnu.edu.cn/opt_jz_cxjsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=8">成果登记与评奖</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a
+                            href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">疫情防控</a>
+                            <ul>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_yq_lxlxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">离校留校登记</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_yq_jkdk.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">健康打卡</a>
+                                </li>
+                                <li class="bg2"><a
+                                    href="https://ssp.scnu.edu.cn/opt_yq_jkdkcx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">近日打卡查询</a>
+                                </li>
+                                <li class="bg3"><a
+                                    href="https://ssp.scnu.edu.cn/opt_yq_fxsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">返校申请</a>
+                                </li>
+                                <li class="bg4 selected sel act"><a
+                                    href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">学生请假</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a
+                            href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">就业服务</a>
+                            <ul>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_jy_daqx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">档案去向</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_lx_wylx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">我要离校</a>
+                                </li>
+                                <li class="bg2"><a
+                                    href="https://ssp.scnu.edu.cn/opt_jy_gopay.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=129">离宿缴费</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">智慧团建</a>
+                            <ul>
+                                <li class="bg0"><a
+                                    href="https://ssp.scnu.edu.cn/opt_tw_kjxmsb.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">科技项目申报</a>
+                                </li>
+                                <li class="bg1"><a
+                                    href="https://ssp.scnu.edu.cn/opt_tw_stdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=104">社团申报</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=14">日常管理</a>
+                            <ul>
+                                <li class="bg0"><a href="https://ssp.scnu.edu.cn/opt_qt_lxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=14">留校登记</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=130">查询统计</a>
+                            <ul></ul>
+                        </li>
+                        <li><a href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55#">更多服务</a>
+                            <ul>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=5">系统管理</a>
+                                </li>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=128">宿舍服务</a>
+                                </li>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=106">医保服务</a>
+                                </li>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=107">勤工俭学</a>
+                                </li>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=34">交互平台</a>
+                                </li>
+                                <li><a
+                                    href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=133">学生发展工作室</a>
+                                </li>
+                                <li>
+                                    <a href="https://ssp.scnu.edu.cn/opt_xx_myapps.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=179">办事大厅管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="login_info">
+                            <a href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55#">
+                                <img src="images/user_icon.png">
+                                <span id="logmsg">学生</span></a>
+                            <a onclick="return confirm(&#39;确定要注销您的登录状态吗？&#39;);" id="gologout" class="submit bg2"
+                               href="javascript:__doPostBack(&#39;ctl00$gologout&#39;,&#39;&#39;)">退出登录</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
-            <div class="main_right">
-                <div class="rightgrid">
+            <div id="mp_main" class="mp_main">
+            </div>
 
-
-                    <div id="right_expand" class="right_expand">
-
-                        <span id="cph_r_expand_msg_panel" class="msgstr"></span>
-
-                        <div class="linkpanel">
-                            <a id="cph_r_expand_add"
-                               href="javascript:__doPostBack(&#39;ctl00$cph_r_expand$add&#39;,&#39;&#39;)">新的假条</a>
-                            <a id="cph_r_expand_back"
-                               href="javascript:__doPostBack(&#39;ctl00$cph_r_expand$back&#39;,&#39;&#39;)">返回列表</a>
-                        </div>
-
-                    </div>
-
-                    <div id="cph_right_right_list" class="right_content">
-                        <div>
-                            <table cellspacing="0" rules="all" border="1" id="cph_right_gv1"
-                                   style="border-collapse:collapse;">
-                                <tbody id="tbody">
-                                <tr class="trh">
-                                    <th scope="col">操作</th>
-                                    <th scope="col">编号</th>
-                                    <th scope="col">类型</th>
-                                    <th scope="col">开始时间</th>
-                                    <th scope="col">结束时间</th>
-                                    <th scope="col">请假课程</th>
-                                    <th scope="col">请假理由</th>
-                                    <th scope="col">是否准假</th>
-                                    <th scope="col">是否销假</th>
-                                    <th scope="col">假条状态</th>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="r_bottom">
-                            <div>共找到 <span id="cph_right_recordcount">5</span> 条记录</div>
-                        </div>
+            <div id="mp_slave" class="mp_slave">
+                <div class="mainleft">
+                    <div class="grid_sys bdorange">
+                        <img src="images/logo.png" alt="" class="logo logined_logo">
+                        <h1 class="scnu_service logined_service"><img src="images/service.png"
+                                                                      alt="学生综合服务平台" class="service"></h1>
                     </div>
                     <div class="clearfix"></div>
-                    <span id="SysErrMsg" class="msgstr"></span>
+                </div>
+
+                <div class="main_content grid3of4">
+                    <div class="leftgrid bdblue">
+
+                        <div class="clearfix"></div>
+
+                        <ul id="left_menu" class="left_menu">
+                            <li class="0"><a
+                                href="https://ssp.scnu.edu.cn/opt_yq_lxlxdj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">离校留校登记</a>
+                            </li>
+                            <li class="1"><a
+                                href="https://ssp.scnu.edu.cn/opt_yq_jkdk.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">健康打卡</a>
+                            </li>
+                            <li class="2"><a
+                                href="https://ssp.scnu.edu.cn/opt_yq_jkdkcx.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">近日打卡查询</a>
+                            </li>
+                            <li class="3"><a
+                                href="https://ssp.scnu.edu.cn/opt_yq_fxsq.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">返校申请</a>
+                            </li>
+                            <li class="4 selected sel act"><a
+                                href="https://ssp.scnu.edu.cn/opt_rc_wyqj.aspx?key=0Td5UiKG3KLJk7GJ&amp;fid=55">学生请假</a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="main_right">
+                        <div class="rightgrid">
+                            <div id="right_expand" class="right_expand">
+                                <span id="cph_r_expand_msg_panel" class="msgstr"></span>
+                                <div class="linkpanel">
+                                    <a id="cph_r_expand_add"
+                                       href="javascript:__doPostBack(&#39;ctl00$cph_r_expand$add&#39;,&#39;&#39;)">新的假条</a>
+                                    <a id="cph_r_expand_back"
+                                       href="javascript:__doPostBack(&#39;ctl00$cph_r_expand$back&#39;,&#39;&#39;)">返回列表</a>
+                                </div>
+                            </div>
+
+                            <div id="cph_right_right_list" class="right_content">
+                                <div>
+                                    <table cellspacing="0" rules="all" border="1" id="cph_right_gv1"
+                                           style="border-collapse:collapse;">
+                                        <tbody id="tbody">
+                                            <tr class="trh">
+                                                <th scope="col">操作</th>
+                                                <th scope="col">编号</th>
+                                                <th scope="col">类型</th>
+                                                <th scope="col">开始时间</th>
+                                                <th scope="col">结束时间</th>
+                                                <th scope="col">请假课程</th>
+                                                <th scope="col">请假理由</th>
+                                                <th scope="col">是否准假</th>
+                                                <th scope="col">是否销假</th>
+                                                <th scope="col">假条状态</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="r_bottom">
+                                    <div>共找到 <span id="cph_right_recordcount">5</span> 条记录</div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <span id="SysErrMsg" class="msgstr"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="copy">
+                <div id="footright">
+                    <div><span id="msg_sysinf">Fx 高校学生综合服务平台 学生工作管理系统 粤ICP备05008875号</span></div>
+                    <div><span id="msg_unitinf">单位联系方式:广州市天河区华南师范大学学生工作处|研究生院</span></div>
+                    <div><span id="msg_copyright">版权所有:华南师范大学 <a
+                        href="mailto:15034508@qq.com">唐小煜</a> 登记证:2010SR038042</span></div>
                 </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
-    <div class="copy">
-        <div id="footright">
-            <div><span id="msg_sysinf">Fx 高校学生综合服务平台 学生工作管理系统 粤ICP备05008875号</span></div>
-            <div><span id="msg_unitinf">单位联系方式:广州市天河区华南师范大学学生工作处|研究生院</span></div>
-            <div><span id="msg_copyright">版权所有:华南师范大学 <a
-                    href="mailto:15034508@qq.com">唐小煜</a> 登记证:2010SR038042</span></div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7E3672E4">
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                   value="/wEdACj3B9+7V/4dap3Rt1QU0bf8CH7C2ooKcj+hye21epcYt+uzpF1NuXI+aMzZHRv7X2z7lR47oVR23DA/cJCW4TxWSu6ydGHZAZEYcoKbGllcy3W2VneF6AYnxjHngQWNz/3TOEf130ZVZ5f+k2UVd/CjfIfXW3mc7I5lWU2XRwLQiaYIVY4g9gIvd4Vo5P39uBRcuvTuYEbQtVJ9Lju5CtzpVGgHorsNKho+z1vF8dARtNrEuhW8qyNrF2dOYl0YW1klKFHY3eju1ff2uPRc1DPIrBx8gvHMlygVY49GbVwKLzRkEQTksV8dZEnA0rBfSrET75nTX5WjwrZiKr5KANVcqPLiDt0xo+zMRj0ee+oJA5Z5NlOHuw80m9lkTDN1Bb5V8V2sfADKN/Ot0LfvecXyUqcDBbEk5Lxi8cGn3PTBKwHyDTJ1L4aWIxAK/IpbzQm9OVa2Mjm521XuA6aM961pBn07PJXRh3cDyFlhTPVEm29z5FKwEGT4YlJFVWysoadOelRpnB7MkD+TD8nISSbQHavwXnXFN3qZlXoaf2/7G4zrIhdqR2sVj5z+m/nDns9YAJhPP2EWNO5e/oGA8Vl98jzSOghbhNn7F0rInNiuh5dGDZ4K5wCAcAYyytpcdLjrBEDjTxtg/rc9utV83+Y/pboOJOEuq3gDWLH8Hxb3pKd1oHt+lWE7g99IMurEhoZiUncduvk1dCMvUxubJxEbM1+Qf/Xc9gKSQIhu3upHAPsmdk2wJ5ZZ9b6U74nPgim2WJTorgHdMu/QFMgWaJoiGp0kyr76/sOnoeVWXjeE6RlMUY00fCNvOm9NKUs5CD90DywszYziMDxwllCTasl0oX1Bd7MY5UwMTlDM8k0MPNpSOHIy4aPwqFf4g3m+OFo=">
         </div>
-    </div>
-</div>
-<div class="aspNetHidden">
-    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7E3672E4">
-    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
-           value="/wEdACj3B9+7V/4dap3Rt1QU0bf8CH7C2ooKcj+hye21epcYt+uzpF1NuXI+aMzZHRv7X2z7lR47oVR23DA/cJCW4TxWSu6ydGHZAZEYcoKbGllcy3W2VneF6AYnxjHngQWNz/3TOEf130ZVZ5f+k2UVd/CjfIfXW3mc7I5lWU2XRwLQiaYIVY4g9gIvd4Vo5P39uBRcuvTuYEbQtVJ9Lju5CtzpVGgHorsNKho+z1vF8dARtNrEuhW8qyNrF2dOYl0YW1klKFHY3eju1ff2uPRc1DPIrBx8gvHMlygVY49GbVwKLzRkEQTksV8dZEnA0rBfSrET75nTX5WjwrZiKr5KANVcqPLiDt0xo+zMRj0ee+oJA5Z5NlOHuw80m9lkTDN1Bb5V8V2sfADKN/Ot0LfvecXyUqcDBbEk5Lxi8cGn3PTBKwHyDTJ1L4aWIxAK/IpbzQm9OVa2Mjm521XuA6aM961pBn07PJXRh3cDyFlhTPVEm29z5FKwEGT4YlJFVWysoadOelRpnB7MkD+TD8nISSbQHavwXnXFN3qZlXoaf2/7G4zrIhdqR2sVj5z+m/nDns9YAJhPP2EWNO5e/oGA8Vl98jzSOghbhNn7F0rInNiuh5dGDZ4K5wCAcAYyytpcdLjrBEDjTxtg/rc9utV83+Y/pboOJOEuq3gDWLH8Hxb3pKd1oHt+lWE7g99IMurEhoZiUncduvk1dCMvUxubJxEbM1+Qf/Xc9gKSQIhu3upHAPsmdk2wJ5ZZ9b6U74nPgim2WJTorgHdMu/QFMgWaJoiGp0kyr76/sOnoeVWXjeE6RlMUY00fCNvOm9NKUs5CD90DywszYziMDxwllCTasl0oX1Bd7MY5UwMTlDM8k0MPNpSOHIy4aPwqFf4g3m+OFo=">
-</div>
-<script type="text/javascript">
-    let studentId = parseInt(1 + Math.random() * 260)
-    if (studentId < 10) {
-        studentId = "00" + studentId
-    } else if (studentId < 100) {
-        studentId += "0" + studentId
-    }
-    s = document.getElementById('logmsg')
-    s.innerHTML = "20182005" + studentId + ' ' + s.innerHTML
+        <script type="text/javascript">
+            let studentId = parseInt(1 + Math.random() * 260)
+            if (studentId < 10) {
+                studentId = "00" + studentId
+            } else if (studentId < 100) {
+                studentId += "0" + studentId
+            }
+            s = document.getElementById('logmsg')
+            s.innerHTML = "20182005" + studentId + ' ' + s.innerHTML
 
-    let number = parseInt(Math.random() * 3000 + 8000)
-    let time = getTime(3, 4)
-    const reasons = ['找同学办事', '剪头发', '外出采购', '去阳光', '看电影', '别人请吃饭', '请吃饭', '聚餐', '学生会团建','去狮山广场','有急事回家']
+            const reasons = ['找同学办事', '剪头发', '外出采购', '去阳光', '看电影', '别人请吃饭', '请吃饭', '聚餐', '学生会团建', '去狮山广场', '有急事回家','疫情防控外出宣传','外出比赛','教资考试','练车','考科目一','考科目二','考科目三','考科目四']
+            let numberId = Math.floor(Math.random() * 3737 + 5137)
 
-    add(number, time.start, time.end, reasons[parseInt(Math.random() * reasons.length)])
-    number += parseInt(Math.random() * 3000 + 3000)
-    time = getTime(5, 6)
-    add(number, time.start, time.end, reasons[parseInt(Math.random() * reasons.length)])
-    time = getTime(9, 10)
-    number += parseInt(Math.random() * 300 + 3000)
-    add(number, time.start, time.end, reasons[parseInt(Math.random() * reasons.length)])
-    time = getTime(11, 12)
-    number += parseInt(Math.random() * 3000 + 3000)
-    add(number, time.start, time.end, reasons[parseInt(Math.random() * reasons.length)])
+            let date = new Date()
+            date.setFullYear(2020)
+            date.setMonth(Math.random()>0.5 ? 8 : 9)
+            date.setDate(Math.floor(Math.random()*31+1))
+            const nums = Math.floor(Math.random()*11)+3
+            document.getElementById('cph_right_recordcount').innerHTML = (nums+1).toString()
 
-    let now = new Date()
-    number += parseInt(Math.random() * 2500 + Math.random() * 845)
-    let start = new Date(now)
-    start.setHours(now.getHours() - 1)
-    start.setMinutes(Math.random() > 0.5 ? 0 : 30)
-    let end = new Date(now)
-    end.setHours(now.getHours() + 5)
-    end.setMinutes(Math.random() > 0.5 ? 0 : 30)
-    add(number, 2021 + "/" + (start.getMonth() + 1) + "/" + start.getDate() + " " + start.getHours() + ":" + start.getMinutes() + ":00",
-        2021 + "/" + (end.getMonth() + 1) + "/" + end.getDate() + " " + end.getHours() + ":" + end.getMinutes() + ":00", reasons[parseInt(Math.random() * reasons.length)])
+            for(let i=0;i<nums;++i){
+                add(false)
+                increase()
+            }
 
-    function getTime(month1, month2) {
-        let months = [month1, month2]
-        let month = months[parseInt(Math.random() * 2)]
-        let days = [1, 6, 7, 8, 9, 11, 13, 15, 18, 19, 20, 22, 23, 25, 26]
-        let daysLength = days.length
-        let day = days[parseInt(Math.random() * daysLength)]
+            date = new Date()
+            add(true)
 
-        let hour = (Math.random() > 0.5 ? parseInt(Math.random() * 3 + 8) : parseInt(Math.random() * 3 + 15))
-        let minute = (Math.random() > 0.5 ? "30" : "00")
+            function add(now){
+                let body = document.getElementById('tbody')
+                let tr = document.createElement('tr')
+                let td1 = document.createElement('td')
+                let a1 = document.createElement('a')
+                a1.onclick = () => {
+                    return confirm("注意：只能删除[未审批]的记录\n\n您确定要删除这一项吗？")
+                }
+                a1.href = '#'
+                a1.innerHTML = '删除'
+                td1.appendChild(a1)
 
-        return {
-            start: 2020 + "/" + month + "/" + day + " " + (hour < 10 ? "0" + hour : hour) + ":" + minute + ":00",
-            end: 2020 + "/" + month + "/" + day + " " + (hour + parseInt(Math.random() * 4 + 3)) + ":" + minute + ":00"
-        }
-    }
+                let startAndEndTime = getTime(now)
 
-    function add(number, startTime, endTime, reason) {
-        let body = document.getElementById('tbody')
-        let tr = document.createElement('tr')
-        let td1 = document.createElement('td')
-        let a1 = document.createElement('a')
-        a1.onclick = () => {
-            return confirm("注意：只能删除[未审批]的记录\n\n您确定要删除这一项吗？")
-        }
-        a1.href = '#'
-        a1.innerHTML = '删除'
-        td1.appendChild(a1)
+                let td2 = document.createElement('td')
+                td2.innerHTML = numberId
 
-        let td2 = document.createElement('td')
-        td2.innerHTML = number
+                let td3 = document.createElement('td')
+                td3.innerHTML = '事假'
 
-        let td3 = document.createElement('td')
-        td3.innerHTML = '事假'
+                let td4 = document.createElement('td')
+                td4.innerHTML = startAndEndTime.start
 
-        let td4 = document.createElement('td')
-        td4.innerHTML = startTime
+                let td5 = document.createElement('td')
+                td5.innerHTML = startAndEndTime.end
 
-        let td5 = document.createElement('td')
-        td5.innerHTML = endTime
+                let td6 = document.createElement('td')
+                td6.innerHTML = '无'
 
-        let td6 = document.createElement('td')
-        td6.innerHTML = '无'
+                let td7 = document.createElement('td')
+                td7.innerHTML = reasons[Math.floor(Math.random()*reasons.length)]
 
-        let td7 = document.createElement('td')
-        td7.innerHTML = reason
+                let td8 = document.createElement('td')
+                td8.innerHTML = '<span title="是否准假"><input id="cph_right_gv1_ctl00_0"\n' +
+                    'type="checkbox"\n' +
+                    'name="ctl00$cph_right$gv1$ctl02$ctl00"\n' +
+                    'checked="checked"\n' +
+                    'disabled="disabled"\n' +
+                    'field_signature="2617424492"\n' +
+                    'form_signature="10228750551726292166"></span>'
 
-        let td8 = document.createElement('td')
-        td8.innerHTML = '<span title="是否准假"><input id="cph_right_gv1_ctl00_0"\n' +
-            'type="checkbox"\n' +
-            'name="ctl00$cph_right$gv1$ctl02$ctl00"\n' +
-            'checked="checked"\n' +
-            'disabled="disabled"\n' +
-            'field_signature="2617424492"\n' +
-            'form_signature="10228750551726292166"></span>'
+                let td9 = document.createElement('td')
+                td9.innerHTML = '<span title="是否销假"><input id="cph_right_gv1_ctl00_0"\n' +
+                    'type="checkbox"\n' +
+                    'name="ctl00$cph_right$gv1$ctl02$ctl00"\n' +
+                    'disabled="disabled"\n' +
+                    'field_signature="2617424492"\n' +
+                    'form_signature="10228750551726292166"></span>'
 
-        let td9 = document.createElement('td')
-        td9.innerHTML = '<span title="是否销假"><input id="cph_right_gv1_ctl00_0"\n' +
-            'type="checkbox"\n' +
-            'name="ctl00$cph_right$gv1$ctl02$ctl00"\n' +
-            'disabled="disabled"\n' +
-            'field_signature="2617424492"\n' +
-            'form_signature="10228750551726292166"></span>'
+                let td10 = document.createElement('td')
+                td10.innerHTML = '已审核'
 
-        let td10 = document.createElement('td')
-        td10.innerHTML = '已审核'
+                tr.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10)
+                body.append(tr)
+            }
 
-        tr.append(td1)
-        tr.append(td2)
-        tr.append(td3)
-        tr.append(td4)
-        tr.append(td5)
-        tr.append(td6)
-        tr.append(td7)
-        tr.append(td8)
-        tr.append(td9)
-        tr.append(td10)
+            function increase(){
+                numberId += Math.floor(Math.random()*2737+3573)
+                date.setDate(date.getDate()+Math.floor((Math.random()*13)))
+                if(date.getMonth() == 9){
+                    const d = date.getDate()
+                    if(d >= 1 && d <= 7){
+                        date.setDate(d+7)
+                    }
+                }
+                if(date.getMonth() == 1){
+                    date.setMonth(2)
+                }
+                if(date.getMonth() == 6 || date.getMonth() == 7){
+                    date.setMonth(8)
+                }
+            }
 
-        body.append(tr)
-    }
-</script>
-</body>
+            function getTime(now){
+                let startDate = new Date(date.getTime())
+                let endDate = new Date(date.getTime())
+                if(now){
+                    startDate.setHours(date.getHours()-1)
+                    endDate.setHours(date.getHours()+5)
+                }else{
+                    startDate.setHours(Math.random() > 0.5 ? Math.floor(Math.random() * 3 + 8) : Math.floor(Math.random() * 3 + 15))
+                    endDate.setHours(startDate.getHours()+Math.floor(Math.random()*4)+3)
+                }
+                startDate.setMinutes(Math.random()>0.5 ? 30 : 0)
+                endDate.setMinutes(Math.random()>0.5 ? 30 : 0)
+
+                return {
+                    start: startDate.getFullYear() + "/" + (startDate.getMonth()+1) + "/" + startDate.getDate() + " " + startDate.getHours() + ":" + startDate.getMinutes() + ":00",
+                    end: endDate.getFullYear() + "/" + (endDate.getMonth()+1) + "/" + endDate.getDate() + " " + endDate.getHours() + ":" + endDate.getMinutes() + ":00"
+                }
+            }
+        </script>
+    </body>
 </html>
